@@ -1,0 +1,42 @@
+{
+  "main": "index.html",
+  "name": "Windows Host File Manager",
+  "description": "A simple GUI for manage host windows file",
+  "version": "0.0.1",
+  "keywords": [
+    "Host"
+  ],
+  "window": {
+    "title": "Windows Host File Manager",
+    "toolbar": false,
+    "frame": true,
+    "show": true,
+    "position": "mouse",
+    "min_width": 800,
+    "min_height": 400,
+      "width": 800,
+      "height": 800
+  },
+  "webkit": {
+    "plugin": true
+  },
+
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "http://opensource.org/licenses/MIT"
+    }
+  ],
+    "maintainers":[{
+        "name": "Jonathan SAEZ",
+        "email": "saez.jonathan@gmail.com",
+        "web": "http://www.kandran.eu"
+
+    }],
+    "bugs": "https://github.com/kandran/Windows-Host-File-Manager/issues",
+    "repositories": [{
+        "type": "git",
+        "url": "https://github.com/kandran/Windows-Host-File-Manager.git"
+    }]
+
+}

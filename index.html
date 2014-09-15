@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Windows Host File Manager</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/hostManager.js"></script>
+  </head>
+  <body onload="readHostFile();">
+    <h1>Host Manager</h1>
+  <div id="wrapper">
+      <div id="box-wrapper">
+
+        <div id="viewsHost"></div>
+          <div id="addHost">
+              <input type="text" id="ip_address"/>
+              <input type="text" id="uri"/>
+              <input type="button" value="Add Line" onclick="addLine();">
+          </div>
+      </div>
+  </div>
+  </body>
+</html>
