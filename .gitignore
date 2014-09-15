@@ -1,0 +1,8 @@
+build/
+node_modules/
+.idea/
+*.exe
+nw.pak
+*.dll
+*.dat
+*.pak
