@@ -2,7 +2,7 @@
   "main": "index.html",
   "name": "Windows Host File Manager",
   "description": "A simple GUI for manage host windows file",
-  "version": "0.0.1",
+  "version": "1.0",
   "keywords": [
     "Host"
   ],
