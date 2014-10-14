@@ -1,21 +1,20 @@
-//require's and global variables
+//App config
 var gui = require('nw.gui');
 var fs = require('fs');
 var readline = require('readline');
+
+//host config
 var filename = 'C:\\WINDOWS\\system32\\drivers\\etc\\hosts';
-
 var lineNumber =0;
-
 var hostFile = Array();
+
+
 detectPlatform();
 function detectPlatform()
 {
-    if (process.platform === 'win32') {
-        console.log('windows');
-       // gui.Window.get().maximize();
-
-    } else {
-        //not windows
+    if (process.platform !== 'win32') {
+        alert('Le systeme ne fonctionne que sur windows');
+        gui.App.quit();
     }
 }
 
