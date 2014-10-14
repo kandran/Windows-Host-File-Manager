@@ -3,13 +3,24 @@ var gui = require('nw.gui');
 var fs = require('fs');
 var readline = require('readline');
 
+
 //host config
-var filename = 'C:\\WINDOWS\\system32\\drivers\\etc\\hosts';
+var filename;
 var lineNumber =0;
 var hostFile = Array();
 
+init();
+function init(){
+    detectPlatform();
+    filename = localStorage.getItem('fileName');
+    if(filename === null){
+        filename = 'C:\\WINDOWS\\system32\\drivers\\etc\\hosts';
+        localStorage.setItem('fileName', filename);
+    }
 
-detectPlatform();
+
+}
+
 function detectPlatform()
 {
     if (process.platform !== 'win32') {
