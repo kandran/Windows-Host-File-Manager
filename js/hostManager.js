@@ -10,6 +10,9 @@ var lineNumber =0;
 var hostFile = Array();
 
 init();
+
+
+// App config
 function init(){
     detectPlatform();
     filename = localStorage.getItem('fileName');
@@ -20,7 +23,6 @@ function init(){
 
 
 }
-
 function detectPlatform()
 {
     if (process.platform !== 'win32') {
@@ -31,6 +33,7 @@ function detectPlatform()
 
 
 
+// Get data from host file and show
 
 function readHostFile(){
 
@@ -66,7 +69,7 @@ function showHostLine(line){
         }else{
             state = 'uncomment';
         }
-        hostLine = '<p id="host-'+ lineNumber +'" class="hostLine ' + state +'">' + line + '<span class="control">'+ createButton('change_status',state, lineNumber) + createButton('delete', state, lineNumber)+ ' </span><p>';
+        hostLine = '<p id="host-'+ lineNumber +'" class="hostLine ' + state +'">' + '<input type="text" value="'+line + '">'  + '<span class="control">'+ createButton('change_status',state, lineNumber) + createButton('delete', state, lineNumber)+  ' </span><p>';
         host.innerHTML += hostLine.replace(/\r\n/g, '<br class="retour" />').replace(/[\r\n]/g, '<br  class="retour" />');
     }
     lineNumber++;
@@ -75,9 +78,9 @@ function showHostLine(line){
 function createChangeStatusButton(context, lineNumber) {
     var button;
     if(context == 'comment'){
-         button =  '<input type="button" value="Uncomment" onclick="action(this, \'host-'+lineNumber+'\')">';
+         button =  '<img src="media/fi-italic.svg" alt="Uncomment" onclick="Uncomment(\'host-'+lineNumber+'\')">';
         }else{
-        button =  '<input type="button" value="Comment" onclick="action(this, \'host-'+lineNumber+'\')">';
+        button =  '<img src="media/fi-italic.svg" alt="Comment" onclick="Comment(\'host-'+lineNumber + '\')">';
     }
     return button;
 }
@@ -92,19 +95,17 @@ function createButton(type, context, lineNumber)
             return  createDeleteButton(context, lineNumber);
             break;
         default :
-
     }
-
     return '';
 }
 
 function createDeleteButton(context){
-    return  '<input type="button" value="Delete" onclick="action(this, \'host-'+lineNumber+'\')">';
+    return  '<img src="media/fi-x.svg" alt="Delete" onclick="Delete(\'host-'+ lineNumber+'\')">';
 }
 
 
 
-
+//Modify host file
 
 function action(button, lineNumber){
     var fn = window[button.getAttribute('value')];
@@ -149,17 +150,13 @@ function addLine() {
 function writeFile(){
     var data = "";
     for(key in hostFile){
-
         for(var i=0; i< hostFile.length; i++){
             if(i == 0){
                 data =hostFile[i];
             }else{
                 data += "\r\n" +hostFile[i]  ;
             }
-
-
         }
-
         hostFile = [];
     }
     fs.writeFile(filename, data, function (err) { // write file
