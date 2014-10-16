@@ -34,7 +34,12 @@
 .hostLine input[type=text]:focus{
     border:solid 2px red;
 }
+.hidden{
+    display: none;
+}
 
-
+.visible{
+    display: inline;
+}
 
 
