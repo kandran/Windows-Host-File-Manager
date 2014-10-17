@@ -79,9 +79,9 @@ init();
     function createChangeStatusButton(context) {
         var button;
         if(context == 'comment'){
-            button =  '<img src="media/fi-italic.svg" alt="Uncomment" onclick="Uncomment(\'host-'+lineNumber+'\')">';
+            button =  '<img src="media/fi-comment.svg" alt="Uncomment" onclick="Uncomment(\'host-'+lineNumber+'\')">';
         }else{
-            button =  '<img src="media/fi-italic.svg" alt="Comment" onclick="Comment(\'host-'+lineNumber + '\')">';
+            button =  '<img src="media/fi-comment.svg" alt="Comment" onclick="Comment(\'host-'+lineNumber + '\')">';
         }
         return button;
     }
