@@ -27,7 +27,7 @@ init();
     function detectPlatform()
     {
         if (process.platform !== 'win32') {
-            alert('Le systeme ne fonctionne que sur windows');
+            alert('This app is available only for windows system.');
             gui.App.quit();
         }
     }
@@ -160,6 +160,10 @@ function Uncomment(lineNumber){
 function addLine() {
     console.log('add line ');
     var ip = document.getElementById('ip_address').value;
+    if(validateIPaddress(ip) === false)
+    {
+        return -1;
+    }
     var url = document.getElementById('uri').value;
     var hostLine =  ip + "\t" + url;
    hostFile.push(hostLine)
@@ -188,3 +192,17 @@ function writeFile(){
         readHostFile();
     });
 }
+
+function validateIPaddress(ip)
+{
+    var ipformat = /^(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/;
+    if(ip.match(ipformat))
+    {
+        return true;
+    }
+
+    alert("You have entered an invalid IP address!");
+    return false;
+
+}
+
