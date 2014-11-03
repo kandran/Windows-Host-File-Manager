@@ -11,6 +11,11 @@
   	font-size: 15px;
 }
 
+h1{
+    font-size: 2em;
+    text-align: center;
+}
+
 #wrapper {
 	margin: -8px;
     margin: 5%;
@@ -26,7 +31,7 @@
 }
 
 .hostLine input[type=text] {
-    width: 70%;
+    width: 80%;
     border:solid 0px gray;
     margin: 20px 5px;
 }
