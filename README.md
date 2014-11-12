@@ -6,8 +6,6 @@ Windows-Host-File-Manager is a simple tool for easy management of host file on w
 With it you could see your host file content and adding, deleting, comment or uncomment a line with one click.
 
 
-![image not loaded...](http://www.online.net/fr/serveur-dedie/dedibox-scg2)
-
 ## Installation
 
 Windows-Host-File-Manager is a Node-Webkit application. No dependencies required.
